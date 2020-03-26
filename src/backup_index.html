@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- <meta charset="UTF-8"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Semantic CSS -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- JavaScript Local Script Sheet -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+  <title>NASA Images</title>
+
+  <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+
+      // Slideshow 1
+      $("#slider1").responsiveSlides({
+        auto: false,
+        pager: true,
+        nav: true,
+        speed: 500,
+        maxwidth: 800,
+        namespace: "centered-btns"
+      });
+
+
+
+    });
+  </script>
+
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>View NASA Images!</h1>
+    <label for="location">How many images would you like to View?</label>
+    <input id="location" type="text">
+    <button class="btn-success" id="weatherLocation">Go!</button>
+    <div class="errors"></div>
+    <div class="showHumidity"></div>
+    <div class="showTemp"></div>
+    <div class="showCountry"></div>
+    <div class="timeZone"></div>
+
+  </div>
+
+  <img src="1.jpg" alt="first-1st image">
+
+
+  <div class="col col-6" id="column-2">
+    <section id="results-section">
+      <h2 class="subheading">Results</h2>
+      <!-- General  -->
+      <div id="results">
+
+      </div>
+  </div>
+
+  <div id="wrapper">
+    <h1>Three different ways to use next/prev buttons</h1>
+
+
+
+    <h3>Vertically centered on both sides</h3>
+    <!-- Slideshow 1 -->
+    <div class="rslides_container">
+      <ul class="rslides" id="slider1">
+        <li><img src="img\1.jpg" alt="first image"></li> 
+        <li><img src="2.jpg" alt="second image"></li>
+        <li><img src="http://localhost:8082/img/3.jpg" alt="third image"></li>
+        <!-- C:\Users\SVAYALK\Desktop\new_salim\epicodus\doctorLookUpProject\img\1.jpg -->
+
+      </ul>
+    </div>
+
+  </div>
+
+
+
+</body>
+
+</html>
