@@ -1,10 +1,20 @@
 import { Container } from './Container.js';
-// import 'bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'responsive-slides/responsiveslides.min.js';
-// import 'responsive-slides/responsiveslides.js';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'responsive-slides/responsiveslides.min.js';
+import 'responsive-slides/responsiveslides.js';
 
 import './styles.css';
+// import homeIcon1 from './img/1.jpg';
+// import homeIcon2 from './img/2.jpg';
+// import homeIcon3 from './img/3.jpg';
+// var homeImg1 = document.getElementById('1');
+// var homeImg2 = document.getElementById('2');
+// var homeImg3 = document.getElementById('3');
+// homeImg1.src = homeIcon1;
+// homeImg2.src = homeIcon2;
+// homeImg3.src = homeIcon3;
+
 // import 'responsive-slides/responsiveslides.css';
 // import 'responsive-slides/demo/themes/themes.css';
 // import 'responsive-slides/demo/images/1.jpg';
@@ -43,13 +53,8 @@ $(document).ready(function () {
       var len = body.collection.items.length;
       console.log(`Length is  ${len}`);
       var hrefArr = [];
-
-
       let containerArray = [];
-
       //lifeExpOneDemoAllPlanet = lifeExpectancy[userEnteredDemographic];
-
-
       for (var i = 0; i < body.collection.items.length; i++) {
         //console.log(`Iteration is ${i}`);
         if (body.collection.items[i].data[0].media_type === "image") {
@@ -74,24 +79,15 @@ $(document).ready(function () {
         //  $('.showHumidity').text(`The href is ${containerArray[0].href}`);
         $('.showHumidity').text(`The href is ${containerArray[0].href}`);
         let htmlContent = `<figure>
-      <img src="${containerArray[4].href}" alt="${containerArray[0].description}" class="img-fluid">      
+      <img src="${containerArray[0].href}" alt="${containerArray[0].description}" class="img-fluid">      
     </figure>`;
         $("#results").append(htmlContent);
 
         
-       
 
 
         //<img src=containerArray[j].href alt="Girl in a jacket" style="width:500px;height:600px;"></img>
       }
-
- 
-   
-
-
-
-
-
       //   $('.showHumidity').text(`The humidity in ${city} is ${body.main.humidity}%`);
       //   $('.showTemp').text(`The temperature in Kelvins is ${body.main.temp} degrees.`);
       // }, function (error) {

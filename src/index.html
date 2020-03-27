@@ -1,12 +1,11 @@
-<html lang="en">
+<!DOCTYPE html>
 
 <head>
-  <meta charset="UTF-8">
+  <!-- <meta charset="UTF-8"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Semantic CSS -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"> -->
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
   <!-- jQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -15,14 +14,77 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-  <title>Nasa</title>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="responsiveslides.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <title>NASA Images</title>
+
+  <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+
+      // Slideshow 1
+      $("#slider1").responsiveSlides({
+        auto: false,
+        pager: true,
+        nav: true,
+        speed: 500,
+        maxwidth: 800,
+        namespace: "centered-btns"
+      });
+
+
+
+    });
+  </script>
+
+
 </head>
 
 <body>
- 
+  <!-- <div class="container"> -->
+  <h1>View NASA Images!</h1>
+  <label>Make selection</label>
+  <select class="Data form-control">
+    <option value="With Meta Data">With Meta Data</option>
+    <option value="Without Meta Data">Without Meta Data</option>
+  </select>
+  <button type="submit" id="submit" class="btn btn-success">Submit</button>
+  <button type="restart" id="restart" class="btn btn-danger">Refresh</button>
 
-  <img src="1.jpg" alt="first-1st image">
+  <!-- </div> -->
+  <div class="container">
+    <ul class="pager">
+      <li class="previous"><a href="#">&larr;Previous</a></li>
+      <div id="results"> </div>
+
+      <li class="next"><a href="#">Next&rarr;</a></li>
+    </ul>
+  </div>
+
+  <!-- <div id="wrapper">
+    <h1>Three different ways to use next/prev buttons</h1>    
+    <div class="rslides_container">
+      <ul class="rslides" id="slider1" id ="photos">
+        
+        <li><img id="1" alt="first image"></li>
+        <li><img id="2" alt="second image"></li>
+        <li><img id="3" alt="third image"></li>
+      </ul>
+    </div>-->
+  </div>
 
 
 
