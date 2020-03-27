@@ -17,18 +17,35 @@ $(function () {
   });
 });
 
-
-function manage(cBId) {
-  var bt = document.getElementById('submit');
-  if (cBId.value != 'Select') {
-      bt.disabled = false;
+$("select#dDId").on('change',function(){
+  console.log(`Inside drop down disable loop`);
+  let temp = $("#dDId option:selected").text();
+  console.log(`salim option value is ${temp}`);
+  
+  if(temp ==="Select") {
+      $("button#submit").attr('disabled',true);
+      console.log(`Inside drop down disable loop - inside IF`);
   }
   else {
-      bt.disabled = false;
+      $("button#submit").attr('disabled',false);
+      console.log(`Inside drop down disable loop - inside ELSE`);
   }
-}    
+});
 
 
+// $(function () {
+//   $("select#dDId").on('change', function () {
+//     console.log(`Inside drop down disable loop`);
+//     if ($(this).find('option:selected').text() == "Select") {
+//       console.log(`Inside drop down disable loop - inside IF`);
+//       $("button#submit").attr('disabled', true);
+//       bt.disabled = true;  
+//   }
+//     else {
+//       $("button#submit").attr('disabled', false);
+//     }
+//   });
+// });  
 
 
 $(document).ready(function () {
@@ -41,10 +58,12 @@ $(document).ready(function () {
   });
   $('#formOne').submit(function () {
     $('#results').empty();
-   // var buttonObj = document.querySelector("button");
-   // buttonObj.textContent = "submitted";
+    // var buttonObj = document.querySelector("button");
+    // buttonObj.textContent = "submitted";
     event.preventDefault();
     $("#toppingsDiv").hide();
+    $("#previous").show();
+    $("#next").show();
     let userEnteredMetaData = $(".metaData").val();
     //   $('input[type="number"], textarea').val('');  // to clear form of entered value after submit
     let metaDataSelection = [];
@@ -106,7 +125,7 @@ $(document).ready(function () {
       $('.showTitle').empty().text(`Title: ${containerArray[k].title}`);
       $('.showDateCreated').empty().text(`Date Created: ${containerArray[k].dateCreated}`);
       $('.showDescription').empty().text(`Description: ${containerArray[k].description}`);
-      $('.showHref').empty().text(`Image URL is ${containerArray[k].href}`);
+      $('.showHref').empty().text(`Image URL: ${containerArray[k].href}`);
 
 
       $('#next').on('click', function () {
@@ -120,7 +139,7 @@ $(document).ready(function () {
         $('.showTitle').empty().text(`Title: ${containerArray[k].title}`);
         $('.showDateCreated').empty().text(`Date Created: ${containerArray[k].dateCreated}`);
         $('.showDescription').empty().text(`Description: ${containerArray[k].description}`);
-        $('.showHref').empty().text(`Image URL is ${containerArray[k].href}`);
+        $('.showHref').empty().text(`Image URL: ${containerArray[k].href}`);
       });
 
       $('#previous').on('click', function () {
@@ -135,10 +154,7 @@ $(document).ready(function () {
         $('.showTitle').empty().text(`Title: ${containerArray[k].title}`);
         $('.showDateCreated').empty().text(`Date Created: ${containerArray[k].dateCreated}`);
         $('.showDescription').empty().text(`Description: ${containerArray[k].description}`);
-        $('.showHref').empty().text(`Image URL is ${containerArray[k].href}`);
-
-
-
+        $('.showHref').empty().text(`Image URL: ${containerArray[k].href}`);
       });
 
 

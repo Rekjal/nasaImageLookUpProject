@@ -97,3 +97,16 @@ p {
     padding:auto;
     text-align: left;
 }
+
+.submit{
+  width: 50%;
+
+}
+
+#next {
+  display: none;
+}
+
+#previous {
+  display: none;
+}
