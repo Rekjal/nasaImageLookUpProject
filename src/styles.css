@@ -110,3 +110,11 @@ p {
 #previous {
   display: none;
 }
+
+.metaData{
+  text-align: left;
+}
+
+.showTitle, .showDateCreated, .showDescription, .showHref {
+  text-align: left;
+}
