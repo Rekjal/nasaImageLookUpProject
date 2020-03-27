@@ -1,3 +1,77 @@
+header {
+  margin-top: 2em;
+}
+
+#main {
+  font-family: 'Roboto Slab', serif;
+}
+
+#title, #subtitle {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+.subheading {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 1.75em;
+  text-align: center;
+  margin: .5em;
+}
+
+#topics, #results-section {
+  margin-top: 1em;
+  font-size: 1.5em;
+  font-weight: 200;
+  text-align: center;
+  padding: 1em;
+  border: 1px solid lightgrey;
+  border-radius: 7px;
+}
+
+#topics2, #results-section2 {
+  margin-top: 1em;
+  font-size: 1.5em;
+  font-weight: 200;
+  text-align: center;
+  padding: 1em;
+  border: 1px solid lightgrey;
+  border-radius: 7px;
+}
+
+.showTitle, .showDateCreated, .showDescription, .showHref {
+  text-align: left;
+
+}
+
+input {
+  text-align: center;
+}
+
+.hidden-start {
+  display: none;
+}
+
+button {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* #cat-button {
+  margin-top: .25em;
+  margin-bottom: .5em;
+} */
+
+.green {
+  background-color: green;
+}
+
+p {
+  cursor: pointer;
+}
+
+
+
 .rslides {
   position: relative;
   list-style: none;
@@ -7,20 +81,6 @@
   margin: 0;
   }
 
-.rslides li {
-  -webkit-backface-visibility: hidden;
-  position: absolute;
-  display: none;
-  width: 100%;
-  left: 0;
-  top: 0;
-  }
-
-.rslides li:first-child {
-  position: relative;
-  display: block;
-  float: left;
-  }
 
 .rslides img {
   display: block;
@@ -29,3 +89,11 @@
   width: 100%;
   border: 0;
   }
+
+  .coralColor {
+    color: coral;
+    font-weight: 700;
+    margin: auto;
+    padding:auto;
+    text-align: left;
+}

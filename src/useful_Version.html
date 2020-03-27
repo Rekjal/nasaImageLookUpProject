@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <head>
+  <!-- <meta charset="UTF-8"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Semantic CSS -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
@@ -21,52 +22,84 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
   <title>NASA Images</title>
+
+
+
+
 </head>
 
 <body>
+
+  <!-- <div class="container">
+    <h1><span class="coralColor">View NASA Images!</span> </h1>
+    <div class="jumbotron">
+      <form id="formOne" name="imagesNASA">
+        <label>Make selection</label>
+        <select class="metaData form-control">
+          <option value="With Meta Data">With Meta Data</option>
+          <option value="Without Meta Data">Without Meta Data</option>
+        </select>
+        <button type="submit" id="submit" class="btn btn-success">Submit</button>
+        <button type="restart" id="restart" class="btn btn-danger">Refresh</button>
+
+         </div> -->
+  <!-- <div class="container">
+          <ul class="pager">
+            <div id="output">
+              <ul id="results"></ul>
+            </div>
+            <li id="previous" class="previous"><a href="#">&larr;Previous</a></li>
+            <li id="next" class="next"><a href="#">Next&rarr;</a></li>
+          </ul>
+        </div>
+
+
+    </div>
+    </form> --> -->
+
   <div class="container" id="columns">
     <div class="row justify-content-around row-eq-height display-flex">
       <div class="col col-6" id="column-1">
-        <!-- new box? -->
         <section id="topics">
           <form id="formOne" name="imagesNASA">
             <h2 class="subheading">View NASA Images</h2>
             <div class="text-center" id="center-main">
+              <!-- Search by keyword  -->
               <div id="keyword-div">
+                <p class="clickable-p" id="keyword">Call By Keyword</p>
                 <div class="accordion-item" id="keyword-input-div">
-                  <select class="metaData form-control" id="dDId">
+                  <select class="metaData form-control" id="ddlPlate">
                     <option value="">Select</opion>
                     <option value="With Meta Data">With Meta Data</option>
                     <option value="Without Meta Data">Without Meta Data</option>
                   </select>
-                  <div class="checkbox" id="cBId">
+
+
+                  <div class="checkbox" id="CBAllPlates">
                     <label>
-                      <input type="checkbox" name="metaData" value="title" value="1">Title
+                      <input type="checkbox" name="pizzaTopping" value="title" value="1">Title
                     </label>
                     <label>
-                      <input type="checkbox" name="metaData" value="dateCreated">Date Created
+                      <input type="checkbox" name="pizzaTopping" value="dateCreated">Date Created
                     </label>
                     <label>
-                      <input type="checkbox" name="metaData" value="description">Description
+                      <input type="checkbox" name="pizzaTopping" value="description">Description
                     </label>
                     <label>
-                      <input type="checkbox" name="metaData" value="href">Image URL
+                      <input type="checkbox" name="pizzaTopping" value="href">Image URL
                     </label>
                   </div>
+
+
                   <!-- <input type="text" id="keyword-input" class="input text-input" placeholder="Keyword"
                       value="Elephant"><br>
                     <button type="button" class="button btn btn-primary" id="keyword-button">Display image!</button> -->
 
-                  <!-- <button type="submit" id="submit" class="btn btn-success" disabled>Display image!</button> -->
                   <button type="submit" id="submit" class="btn btn-success">Display image!</button>
-                 
                   <button type="restart" id="restart" class="btn btn-danger">Refresh</button>
-                  <div class="showTitle"><span class="coralColor">Title: </span></div>
-                  <div class="showDateCreated"></div>
-                  <div class="showDescription"></div>
-                  <div class="showHref"></div>
-
 
                 </div>
               </div>
@@ -83,18 +116,16 @@
             <ul class="pager">
               <div id="output">
                 <ul id="results"></ul>
-               
+                <li id="previous" class="previous"><a href="#">&larr;Previous</a></li>
+                <li id="next" class="next"><a href="#">Next&rarr;</a></li>
               </div>
-              <li id="previous" class="previous"><a href="#">&larr;Previous</a></li>
-              <li id="next" class="next"><a href="#">Next&rarr;</a></li>
 
             </ul>
           </div>
+
+
+
       </div>
-
-
-      
-
     </div>
     <!--Columns container-->
 
@@ -104,7 +135,20 @@
   </div>
 
 
+  <!-- <div class="container"> -->
 
+
+  <!-- <div id="wrapper">
+    <h1>Three different ways to use next/prev buttons</h1>    
+    <div class="rslides_container">
+      <ul class="rslides" id="slider1" id ="photos">
+        
+        <li><img id="1" alt="first image"></li>
+        <li><img id="2" alt="second image"></li>
+        <li><img id="3" alt="third image"></li>
+      </ul>
+    </div>-->
+  </div>
 
 
 
