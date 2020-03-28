@@ -40,11 +40,11 @@
 
 _**Example:**_ If user selects `Without Meta Data` option from drop down and clicks `Submit`, the application would start by displaying the very first image in the box on the right marked `Image Result`. 
 
-![alt text](https://github.com/Rekjal/asynchAPInASAImageProject/blob/master/img/withMetaData.png)
+![alt text](https://github.com/Rekjal/asynchAPInASAImageProject/blob/master/img/withOutMetaData.png)
 
 _**Example:**_ If user selects `With Meta Data` option from drop down, selects any combination of 4 Meta Data elements (`Title`, `Date Created`, `Description`, and `Image URL`), and click `Submit`, the application would start by displaying the very first image in the box on the right marked `Image Result`. Further, Meta Data pertaining to the clicked check boxes would render in the bottom part of the box on the left marked `View NASA Images`. 
 
-![alt text](https://github.com/Rekjal/asynchAPInASAImageProject/blob/master/img/withOutMetaData.png)
+![alt text](https://github.com/Rekjal/asynchAPInASAImageProject/blob/master/img/withMetaData.png)
 
 _**Error-Handling for API call Error:**_ If user selects a valid option from drop down, click `Submit` but API call resulted in an error, the application would display an error message containing the `request.status` and `request.statusText` in the box on the right marked `Image Result`. To demo working of `API call Error` swap valid URL with an invalid one by commenting out `line-52` and uncommenting `line-53` in `main.js` (error code in this specific case would be `Error Code: 401 (Unauthorized)`)
 
