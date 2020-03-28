@@ -38,15 +38,15 @@
 
 - Clicking Meta Data `Image URL` would open currently displayed image in a new browser tab
 
-_**Example:**_ If user selects `Without Meta Data` option from drop down and clicks `Submit`, the program would display first image in the box on the right marked `Image Result`. 
+_**Example:**_ If user selects `Without Meta Data` option from drop down and clicks `Submit`, the application would start by displaying the very first image in the box on the right marked `Image Result`. 
 
-_**Example:**_ If user selects `With Meta Data` option from drop down, selects any combination of 4 Meta Data elements (`Title`, `Date Created`, `Description`, and `Image URL`), and click `Submit`, the program would display first image in the box on the right marked `Image Result`. Further, Meta Data pertaining to the clicked check boxes would render in the bottom part of the box on the left marked `View NASA Images`. 
+_**Example:**_ If user selects `With Meta Data` option from drop down, selects any combination of 4 Meta Data elements (`Title`, `Date Created`, `Description`, and `Image URL`), and click `Submit`, the application would start by displaying the very first image in the box on the right marked `Image Result`. Further, Meta Data pertaining to the clicked check boxes would render in the bottom part of the box on the left marked `View NASA Images`. 
 
-_**Error-Handling for API call Error:**_ If user selects a valid option from drop down, click `Submit` but API call resulted in an error, the program would display an error message containing the `request.status` and `request.statusText` in the box on the right marked `Image Result`. To demo working of `API call Error` swap valid URL with an invalid one by commenting out line-52 and uncommenting line-53 in `main.js` (error code in this specific case would be `Error Code: 401 (Unauthorized)`)
+_**Error-Handling for API call Error:**_ If user selects a valid option from drop down, click `Submit` but API call resulted in an error, the application would display an error message containing the `request.status` and `request.statusText` in the box on the right marked `Image Result`. To demo working of `API call Error` swap valid URL with an invalid one by commenting out `line-52` and uncommenting `line-53` in `main.js` (error code in this specific case would be `Error Code: 401 (Unauthorized)`)
 
 ![alt text](http://url/to/img.png)
 
-_**Error-Handling if API query returned no result:**_ If user selects a valid option from drop down, click `Submit` but API call returned 0 image media, application would return a notification that states that there were no media image (Error message: `Error: API call returned 0 Image Media`) in the box on the right marked `Image Result` (to demo working of `API query returning no result`, force variable that stores Image Array Count (`imgObjCount`) to a value of 0 - do this by commenting out line-87 and uncommenting line-88 in `main.js`)
+_**Error-Handling if API query returned no result:**_ If user selects a valid option from drop down, click `Submit` but API call returned 0 image media, the application would return a notification that states that there were no image media image (Error message: `Error: API call returned 0 Image Media`) in the box on the right marked `Image Result` (to demo working of `API query returning no result`, force variable that stores Image Array Count (`imgObjCount`) to a value of `0` - do this by commenting out `line-87` and uncommenting `line-88` in `main.js`)
 
 ![alt text](http://url/to/img.png)
 
