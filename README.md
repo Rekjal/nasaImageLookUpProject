@@ -1,5 +1,3 @@
-<![endif]-->
-
 # NASA Image Project: Asynchronous API
 
 #### A web application that will make an API call to NASA, parse the response, and render collected images and meta data. Following are the main features of this application ...
