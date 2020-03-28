@@ -44,7 +44,7 @@ _**Example:**_ If user selects `With Meta Data` option from drop down, selects a
 
 _**Error-Handling for API call Error:**_ If user selects a valid option from drop down, click `Submit` but API call resulted in an error, the application would display an error message containing the `request.status` and `request.statusText` in the box on the right marked `Image Result`. To demo working of `API call Error` swap valid URL with an invalid one by commenting out `line-52` and uncommenting `line-53` in `main.js` (error code in this specific case would be `Error Code: 401 (Unauthorized)`)
 
-![alt text](http://url/to/img.png)
+![alt text](file://url/to/img.png)
 
 _**Error-Handling if API query returned no result:**_ If user selects a valid option from drop down, click `Submit` but API call returned 0 image media, the application would return a notification that states that there were no image media image (Error message: `Error: API call returned 0 Image Media`) in the box on the right marked `Image Result` (to demo working of `API query returning no result`, force variable that stores Image Array Count (`imgObjCount`) to a value of `0` - do this by commenting out `line-87` and uncommenting `line-88` in `main.js`)
 
