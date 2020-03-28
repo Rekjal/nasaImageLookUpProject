@@ -2,7 +2,7 @@
 
 #### A web application that will make an API call to NASA (https://api.nasa.gov/), parse the response, and render collected `Images` and `Meta data`. Following are the main features of this application ...
 
--  Query NASA API (API URL: `https://images-api.nasa.gov/search?q=apollo%2011...`)
+-  Query NASA Image and Video Library API (API URL: `https://images-api.nasa.gov/search?q=apollo%2011...`)
 
 -  Application returns a notification if API call resulted in an error
 
