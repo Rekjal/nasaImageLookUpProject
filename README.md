@@ -38,9 +38,9 @@
 
 - Clicking Meta Data `Image URL` would open currently displayed image in a new browser tab
 
-_**Example:**_ If user selects `Without Meta Data` option from drop down and clicks `Submit`, the program would display first image in the box on the right marked `Image Result`. Further, the `Previous` and `Next` buttons appear which allows user to navigate through the complete set of images. Once `final` image is reached, clicking `Next` would render the very `first` image
+_**Example:**_ If user selects `Without Meta Data` option from drop down and clicks `Submit`, the program would display first image in the box on the right marked `Image Result`. 
 
-_**Example:**_ If user selects `With Meta Data` option from drop down, selects any combination of 4 Meta Data elements (`Title`, `Date Created`, `Description`, and `Image URL`), and click `Submit`, the program would display first image in the box on the right marked `Image Result`. Further, Meta Data pertaining to the clicked check boxes would render in the bottom part of the box on the left marked `View NASA Images`. Also the `Previous` and `Next` button appear which helps user navigate through the complete set of images. Once `final` image is reached, clicking `Next` would in render the very `first` image.
+_**Example:**_ If user selects `With Meta Data` option from drop down, selects any combination of 4 Meta Data elements (`Title`, `Date Created`, `Description`, and `Image URL`), and click `Submit`, the program would display first image in the box on the right marked `Image Result`. Further, Meta Data pertaining to the clicked check boxes would render in the bottom part of the box on the left marked `View NASA Images`. 
 
 ### Specs
 
