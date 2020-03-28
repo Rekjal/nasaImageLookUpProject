@@ -7,7 +7,6 @@ export class Container {
         this.mediaType;
         this.href;
     }
-
     setter(dateCreated, description, nasaId, title, mediaType, href) {
         this.dateCreated = dateCreated;
         this.description = description;
@@ -16,8 +15,4 @@ export class Container {
         this.mediaType = mediaType;
         this.href = href;
     }
-
-
-
-
 }

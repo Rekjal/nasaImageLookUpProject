@@ -2,14 +2,10 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Semantic CSS -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"> -->
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-  <!-- jQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <!-- JavaScript Local Script Sheet -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
@@ -17,7 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script src="responsiveslides.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -28,7 +23,6 @@
   <div class="container" id="columns">
     <div class="row justify-content-around row-eq-height display-flex">
       <div class="col col-6" id="column-1">
-        <!-- new box? -->
         <section id="topics">
           <form id="formOne" name="imagesNASA">
             <h2 class="subheading">View NASA Images</h2>
@@ -41,83 +35,44 @@
                     <option value="Without Meta Data">Without Meta Data</option>
                   </select>
                   <div class="checkbox" id="cBId">
-                    <label>
-                      <input type="checkbox" name="metaData" value="title" value="1">Title
-                    </label>
-                    <label>
-                      <input type="checkbox" name="metaData" value="dateCreated">Date Created
-                    </label>
-                    <label>
-                      <input type="checkbox" name="metaData" value="description">Description
-                    </label>
-                    <label>
-                      <input type="checkbox" name="metaData" value="href">Image URL
-                    </label>
+                    <label> <input type="checkbox" name="metaData" value="title" value="1">Title</label>
+                    <label> <input type="checkbox" name="metaData" value="dateCreated">Date Created</label>
+                    <label> <input type="checkbox" name="metaData" value="description">Description</label>
+                    <label> <input type="checkbox" name="metaData" value="href">Image URL</label>
                   </div>
-                  <!-- <input type="text" id="keyword-input" class="input text-input" placeholder="Keyword"
-                      value="Elephant"><br>
-                    <button type="button" class="button btn btn-primary" id="keyword-button">Display image!</button> -->
-
-                  <!-- <button type="submit" id="submit" class="btn btn-success" disabled>Display image!</button> -->
                   <button type="submit" id="submit" class="btn btn-success" disabled>Display image!</button>
-
                   <button type="restart" id="restart" class="btn btn-danger">Refresh</button>
-                  <!-- <div class="showTitle"><span class="coralColor">Title: </span></div> -->
                   <br>
-                  <br>
-                 
-                    <ol id="metaData2">
-                    </ol>
-                 
-
-
-                  <!-- <div class="metaData"></div>                   -->
-                  <div class="showTitle"></div>
-                  <div class="showDateCreated"></div>
-                  <div class="showDescription"></div>
-                  <div class="showHref"></div>
-
-
+                  <div class="metaDaraVerbiage">
+                    <p id="metaDataId"> </p>
+                    <p id="showTitle"></p>
+                    <p id="showDateCreated"></p>
+                    <p id="showDescription"></p>
+                    <p id="showHref"></p>
+                  </div>
                 </div>
               </div>
             </div>
+          </form>
         </section>
       </div>
 
-      <!-- Results  -->
+      <!-- Image Result  -->
       <div class="col col-6" id="column-2">
         <section id="results-section">
-          <h2 class="subheading">Results</h2>
-          <!-- General  -->
+          <h2 class="subheading">Image Result</h2>
           <div class="container">
             <ul class="pager">
               <div id="output">
                 <ul id="results"></ul>
-
               </div>
               <li id="previous" class="previous"><a href="#">&larr;Previous</a></li>
               <li id="next" class="next"><a href="#">Next&rarr;</a></li>
-
             </ul>
           </div>
       </div>
-
-
-
-
     </div>
-    <!--Columns container-->
-
   </div>
-
-
-  </div>
-
-
-
-
-
-
 </body>
 
 </html>
