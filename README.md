@@ -1,8 +1,8 @@
 # NASA Image Project: Asynchronous API
 
-#### A web application that will make an API call to NASA, parse the response, and render collected `Images` and `Meta data`. Following are the main features of this application ...
+#### A web application that will make an API call to NASA (https://api.nasa.gov/), parse the response, and render collected `Images` and `Meta data`. Following are the main features of this application ...
 
--  Query NASA API (https://api.nasa.gov/) (API URL: `https://images-api.nasa.gov/search?q=apollo%2011...`)
+-  Query NASA API (API URL: `https://images-api.nasa.gov/search?q=apollo%2011...`)
 
 -  Application returns a notification if API call resulted in an error
 
