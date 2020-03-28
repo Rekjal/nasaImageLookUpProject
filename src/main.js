@@ -85,11 +85,13 @@ $(document).ready(function () {
       let imgObjCount = imgObjArray.length;
       console.log(`Objects:ImageObjects::${mediaObjCount}:${imgObjCount}`);
 
-      $("#previous").show();
-      $("#next").show();
       let index = 0;
 
       printMetaData(index, clickedCheckBoxes, imgObjArray[index]);
+      $("#previous").show();
+      $("#next").show();
+
+      //function to handle clicks on "Next" button
       $('#next').on('click', function () {
         index += 1;
         if (index === imgObjCount - 1) {
@@ -98,22 +100,25 @@ $(document).ready(function () {
         printMetaData(index, clickedCheckBoxes, imgObjArray[index]);
       });
 
+      //function to handle clicks on "Previous"" button
       $('#previous').on('click', function () {
         index -= 1;
         if (index === -1) {
           index = imgObjCount - 1;
         }
         printMetaData(index, clickedCheckBoxes, imgObjArray[index]);
+
       });
 
+      //function to handle "Meta Data" based on check box (s) clicked by user and render data in box on Left hand side in UI
       function printMetaData(index, checkBoxArray, imgObjArrayElement) {
         $('#showTitle').empty();
         $('#showDateCreated').empty();
         $('#showDescription').empty();
         $('#showHref').empty();
         $('#metaDataId').empty();
-        let htmlContent = `<figure><img src="${imgObjArrayElement.href}" alt="${imgObjArrayElement.description}" class="img-fluid"></figure>`;
-        $("#results").empty().append(htmlContent);
+        let resultsContent = `<figure><img src="${imgObjArrayElement.href}" alt="${imgObjArrayElement.description}" class="img-fluid"></figure>`;
+        $("#results").empty().append(resultsContent);
         if (checkBoxArray.length != 0 && userEnteredMetaData === "With Meta Data") {
           for (let i = 0; i < checkBoxArray.length; i++) {
             if (checkBoxArray[i] === "title") {
