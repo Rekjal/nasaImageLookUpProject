@@ -26,13 +26,9 @@ $("select#dDId").on('change', function () {
 });
 
 $(document).ready(function () {
-  let buttonObj = document.querySelector("button");
   //Reload Page upon clicking "Refresh" button
   $('#restart').click(function () {
-    $('.accordion-item').hide();
-    $(this).siblings("div").show();
     document.location.reload(true);
-    buttonObj.textContent = "submit";
   });
   $('#formOne').submit(function () {
     event.preventDefault();
@@ -45,23 +41,27 @@ $(document).ready(function () {
     $("#next").hide();
     let userEnteredMetaData = $(".metaData").val();
     let clickedCheckBoxes = [];
+    //Identify and store in an array the check boxes that were clicked
     $("input:checkbox[name=metaData]:checked").each(function () {
       clickedCheckBoxes.push($(this).val());
     });
     $("input[type=checkbox]").each(function () { this.checked = false; }); //to uncheck previously checked checkboxes
 
+    //API Request and Promise implementation
     let promise = new Promise(function (resolve, reject) {
-      //const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}`;
-      const url = `https://images-api.nasa.gov/search?q=apollo%2011...`;
+      const url = `https://images-api.nasa.gov/search?q=apollo%20112...`;
+      // const url = `https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=10&user_key=5a8046a6a8e49a894469fac0303aa51d;`;
       let request = new XMLHttpRequest();
       request.open("GET", url, true);
       request.send();
       request.onload = function () {
         if (this.status === 200) {
           resolve(request.response);
-        } else {
+        }
+        else {
           reject(Error(request.statusText));
-          console.log(`error was ${request.statusText}`);
+          let errorText = "<span class=\"blackColor\">Error Code: </span><span class=\"redColor\">" + request.status + "</span><br>" + "(<span class=\"redColor\">" + request.statusText + "</span>)";
+          $("#results").empty().append(errorText);
         }
       };
     });
@@ -77,48 +77,72 @@ $(document).ready(function () {
           let nasaId = body.collection.items[i].data[0].nasa_id;
           let href = body.collection.items[i].links[0].href;
           let mediaType = body.collection.items[i].data[0].media_type;
-          let mediaContainer = new MediaContainer();
+          let mediaContainer = new MediaContainer(); //create object based on blue print "MediaContainer"
           mediaContainer.setter(dateCreated, description, nasaId, title, mediaType, href);
           imgObjArray.push(mediaContainer);
         }
       }
-      let imgObjCount = imgObjArray.length;
-      console.log(`Objects:ImageObjects::${mediaObjCount}:${imgObjCount}`);
-
-      let index = 0;
-
-      printMetaData(index, clickedCheckBoxes, imgObjArray[index]);
-      $("#previous").show();
-      $("#next").show();
-
-      //function to handle clicks on "Next" button
-      $('#next').on('click', function () {
-        index += 1;
-        if (index === imgObjCount - 1) {
-          index = 0;
+      let imgObjCount = imgObjArray.length; // to Demo error handling when API call return no image, comment this line and uncomment below line
+      // let imgObjCount = 0;
+      
+      try {
+        const objectOfError = checkIfApiReturnedNoImage(imgObjCount);
+        if (objectOfError instanceof Error) {                           // checking if return type is an object o type "Error"
+          //console.error(objectOfError.message);                         // message is what ever is passed to "Error" object
+          let errorText = "<span class=\"blackColor\">Error</span>: API call returned <span class=\"redColor\">" + imgObjCount + "</span> Image Media";
+          throw RangeError(errorText);         // throw a RANGEERROR to move control to CATCH block.");
         }
-        printMetaData(index, clickedCheckBoxes, imgObjArray[index]);
-      });
-
-      //function to handle clicks on "Previous"" button
-      $('#previous').on('click', function () {
-        index -= 1;
-        if (index === -1) {
-          index = imgObjCount - 1;
+        else { //TRY was successful-no need to throw RANGEERROR to move control to CATCH Block-instead proceed to rendering of images!
+          //Code to handle very first click at which time "Previous" and "Next" buttons are made to appear
+          let index = 0;
+          printMetaData(index, clickedCheckBoxes, imgObjArray[index]);          
+          //Code to handle clicks on "Next" button
+          $('#next').on('click', function () {
+            index += 1;
+            if (index === imgObjCount - 1) {
+              index = 0;
+            }
+            printMetaData(index, clickedCheckBoxes, imgObjArray[index]);
+          });
+          //Code to handle clicks on "Previous"" button
+          $('#previous').on('click', function () {
+            index -= 1;
+            if (index === -1) {
+              index = imgObjCount - 1;
+            }
+            printMetaData(index, clickedCheckBoxes, imgObjArray[index]);
+          });
+          $("#previous").show();
+          $("#next").show();
         }
-        printMetaData(index, clickedCheckBoxes, imgObjArray[index]);
+      }
+      catch (rangeError) {
+        if (rangeError instanceof RangeError) {   //redundant but leave it for conceptual understanding (checking if object rangeError is an object of "RangeError")
+          $("#previous").hide();
+          $("#next").hide();
+          console.error(`AllMediaObject Count:ImageObject Count::${mediaObjCount}:${imgObjCount}`);
+          $("#results").empty().append(rangeError.message);
+        } 
+      }
 
-      });
+      //function that returns an object of type "Error" is if API call returned 0 images
+      function checkIfApiReturnedNoImage(imageCount) {
+        if (isNaN(imageCount) || imageCount == 0) {
+          return new Error("checkIfApiReturnedNoImage: API call returned no Image Media");
+        } else {
+          return true;
+        }
+      }
 
-      //function to handle "Meta Data" based on check box (s) clicked by user and render data in box on Left hand side in UI
+      //function to handle rendering of "Meta Data" based on check box (s) clicked
       function printMetaData(index, checkBoxArray, imgObjArrayElement) {
         $('#showTitle').empty();
         $('#showDateCreated').empty();
         $('#showDescription').empty();
         $('#showHref').empty();
         $('#metaDataId').empty();
-        let resultsContent = `<figure><img src="${imgObjArrayElement.href}" alt="${imgObjArrayElement.description}" class="img-fluid"></figure>`;
-        $("#results").empty().append(resultsContent);
+        let imageToRender = `<figure><img src="${imgObjArrayElement.href}" alt="${imgObjArrayElement.description}" class="img-fluid"></figure>`;
+        $("#results").empty().append(imageToRender);
         if (checkBoxArray.length != 0 && userEnteredMetaData === "With Meta Data") {
           for (let i = 0; i < checkBoxArray.length; i++) {
             if (checkBoxArray[i] === "title") {

@@ -113,12 +113,28 @@ input {
   cursor: pointer;
 } */
 
-  .coralColor {
+.coralColor {
     color: #b03060;
     font-weight: 700;
     margin: auto;
     padding:auto;
     text-align: left;
+}
+
+.redColor {
+  color:red;
+  font-weight: 1000;
+  margin: auto;
+  padding:auto;
+  text-align: center;
+}
+
+.blackColor {
+  color:black;
+  font-weight: 1000;
+  margin: auto;
+  padding:auto;
+  text-align: center;
 }
 
 #next {
