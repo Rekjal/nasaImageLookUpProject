@@ -1,4 +1,4 @@
-import { Container } from './Container.js';
+import { MediaContainer } from './MediaContainer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
@@ -69,16 +69,16 @@ $(document).ready(function () {
       let mediaObjCount = body.collection.items.length;
       let imgObjArray = [];
       for (let i = 0; i < body.collection.items.length; i++) {
-        if (body.collection.items[i].data[0].media_type === "image") {
+        if (body.collection.items[i].data[0].media_type === "image") { //remove all media type expect Images
           let title = body.collection.items[i].data[0].title;
           let dateCreated = body.collection.items[i].data[0].date_created;
           let description = body.collection.items[i].data[0].description;
           let nasaId = body.collection.items[i].data[0].nasa_id;
           let href = body.collection.items[i].links[0].href;
           let mediaType = body.collection.items[i].data[0].media_type;
-          let container = new Container();
-          container.setter(dateCreated, description, nasaId, title, mediaType, href);
-          imgObjArray.push(container);
+          let mediaContainer = new MediaContainer();
+          mediaContainer.setter(dateCreated, description, nasaId, title, mediaType, href);
+          imgObjArray.push(mediaContainer);
         }
       }
       let imgObjCount = imgObjArray.length;

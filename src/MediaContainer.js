@@ -1,4 +1,4 @@
-export class Container {
+export class MediaContainer {
     constructor() {
         this.dateCreated;
         this.description;
