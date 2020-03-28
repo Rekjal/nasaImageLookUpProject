@@ -1,51 +1,48 @@
-# Super Galactic Age Calculator
-#### A web application that will take a person’s _Age_ in years, _Gender_, and _Demographic_ and return various attributes of Age relative to other planets. A TDD spec was committed _before_ writing associated method thus ensuring adherence to the _Red, Green, Refactor_ workflow. At least one test was created for each spec and no test had more than one expectation. Application returns the following ...
--  Age in `Mercury years`
--  Age in `Venus years`
--  Age in `Mars years`
--  Age in `Jupiter years`
--  How many `years a user has left to live` on each planet (including `Earth`). This is calculated based on user’s estimated `Life Expectancy` which in turn is calculated based on two pieces of information collected from user (`Gender`, and `Demographic`). This spawns 3 cases ..
-	- If user has already surpassed the estimated `Life Expectancy`, return the number of `years user has lived past` the estimated `Life Expectancy`.
-	- If user hasn't surpassed the estimated `Life Expectancy`, return the number of years `left to live`
-	- If user's `current age` is `exactly equal` to estimated` Life Expectancy`, gently inform on `impending death`
+<![endif]-->
 
-##### Date: **03/07/2020**
+# NASA Image Project: Asynchronous API
+
+#### A web application that will make an API call to NASA, parse the response, and render collected images and meta data. Following are the main features of this application ...
+
+-  Query NASA API (`https://images-api.nasa.gov/search?q=apollo%2011...`)
+
+-  Application returns a notification if API call resulted in an error
+
+-  Application returns a notification if API call returned no result.
+
+-  Application correctly parse nested JSON and displays the API call result, which includes `Images` and `Meta data` pertaining to Images. User can go for any combination of following 4 `Meta Data` elements by selecting checkbox or not opt for any `Meta Data` at all. 
+	-  `Title`
+
+	-  `Date Created`
+
+	-  `Description`
+
+	-  `Image URL`
+
+- API call does not use keys and hence no `.env` file exist
+
+	
+-  Further, user can navigate through every retrieved image by using `Previous` and `Next` buttons. These two buttons operate in a cyclical manner - meaning if user clicks `Next` when `final` image is in view, the subsequent image rendered would be the very `first` one. Similarly, if  user clicks `Previous` when `first` image is in view, the subsequent image rendered would be the `final` one
+
+##### Date: **03/27/2020**
 
 #### By **Salim Mayan**
-  
-## Description    
+
+## Description
+
 #### Further Exploration
+
 ##### Added additional features:
 
--  Added UI to application.
 -  Included a `Refresh` should the user wish to refresh page
 
-_**Example:**_ If a user enter Age in Mandatory `Age` field, choose `Gender'`as `Male`from drop down, choose `Demographic'`as `American`from drop down, and `Submit`, the program shall display below content
+-  `Submit` button is disabled until user selects a valid option from Drop Down
 
-### For your chosen  `Earth Age` : `Gender` : `Demographic` : : : `45`  :  `Male`  :  `American`
+- Clicking Meta Data `Image URL` would open currently displayed image in a new browser tab
 
-> -   Your Age on  `Mercury`  is  `187`  (Estimated `Life Expectancy`  based on  Gender/Demographic:  `270`. `Years left to live`:  `83`)
-> -   Your Age on  `Venus`  is  `72`  (Estimated `Life Expectancy`  based on  Gender/Demographic:  `104`. `Years left to live`:  `32`)
-> -   Your Age on  `Earth`  is  `45`  (Estimated `Life Expectancy`  based on  Gender/Demographic:  `65`. `Years left to live`:  `20`)
-> -   Your Age on  `Mars`  is  `23`  (Estimated `Life Expectancy`  based on  Gender/Demographic:  `34`. `Years left to live`:  `11`)
+_**Example:**_ If user selects `Without Meta Data` option from drop down and clicks `Submit`, the program would display first image in box on the right marked `Image Result`. Further the `Previous` and `Next` buttons appear which allows user to navigate through the complete set of images. Once `final` image is reached, clicking `Next` would render the very `first` image
 
-_**Example:**_ If a user enter Age in Mandatory `Age` field, choose `Gender'`as `Male`from drop down, choose `Demographic'`as `American`from drop down, and `Submit`, the program shall display below content
-
-### For your chosen  `Earth Age` : `Gender` : `Demographic` : : : `65`  :  `Male`  :  `American`
-
-> -   Your Age on  `Mercury`  is  `270`  (Estimated `Life Expectancy`  based on  Gender/Demographic:  `270`. Regret to inform you will `kick the bucket` someday this year)
-> -   Your Age on  `Venus`  is  `104`  (Estimated `Life Expectancy`  based on  Gender/Demographic:  `104`. Regret to inform you will `kick the bucket` someday this year)
-> -   Your Age on  `Earth`  is  `65`  (Estimated `Life Expectancy`  based on  Gender/Demographic:  `65`. Regret to inform you will `kick the bucket` someday this year)
-> -   Your Age on  `Mars`  is  `34`  (Estimated `Life Expectancy`  based on  Gender/Demographic:  `34`. Regret to inform you will `kick the bucket` someday this year)
-> -   Your Age on  `Jupiter`  is  `5`  (Estimated `Life Expectancy`  based on  Gender/Demographic:  `5`. Regret to inform you will `kick the bucket` someday this year)
-
-### For your chosen  `Earth Age` : `Gender` : `Demographic` : : : `87`  :  `Male`  :  `American`
-
-> -   Your Age on  `Mercury`  is  `362`  (Estimated Life Expectancy  based on  Gender/Demographic:  `270`. Years lived beyond `Expiry date`:  `92`
-> -   Your Age on  `Venus`  is  `140`  (Estimated Life Expectancy  based on  Gender/Demographic:  `10`4. Years lived beyond `Expiry date`:  `36`
-> -   Your Age on  `Earth`  is  `87`  (Estimated `Life Expectancy`  based on  Gender/Demographic:  `65`. Years lived beyond `Expiry date`:  `22`
-> -   Your Age on  `Mars`  is  `46`  (Estimated `Life Expectancy`  based on  Gender/Demographic:  `34`. Years lived beyond `Expiry date`:  `12`
-> -   Your Age on  `Jupiter`  is  `7`  (Estimated `Life Expectancy`  based on  Gender/Demographic:  `5`. Years lived beyond `Expiry date`:  `2`
+_**Example:**_ If user selects `With Meta Data` option from drop down, selects any combination of 4 Meta Data elements (`Title`, `Date Created`, `Description`, and `Image URL`), and click `Submit`, the program would display first image in box on the right marked `Image Result`. Further Meta Data pertaining to the clicked check boxes would render in the bottom part of the box on the left marked `View NASA Images`. Also the `Previous` and `Next` button appear which helps user navigate through the complete set of images. Once `final` image is reached, clicking `Next` would in render the very `first` image.
 
 ### Specs
 
@@ -53,13 +50,14 @@ _**Example:**_ If a user enter Age in Mandatory `Age` field, choose `Gender'`as 
 
 | :------------- | :------------- | :------------- |
 
-  
-| **Homepage** | User accesses localhost:5500 | Homepage with user input form |
+| **Homepage** | User accesses localhost:8080 | Homepage with user input form |
 
-| ** Program will not accept empty Input in `Age` form**| Output: `Please fill out this field` |
+| ** Program will not accept empty Input (If chosen option in drop down is `Select` then `Submit` button would remain disabled**|
 
 ## Setup/Installation Requirements
+
 1. Clone this repository.
+
 2. To run program, do `npm install' and "npm run start'
 
 ## Known Bugs
@@ -67,15 +65,23 @@ _**Example:**_ If a user enter Age in Mandatory `Age` field, choose `Gender'`as 
 * No known bugs at this time.
 
 ## Technologies Used
+
 * HTML
+
 * CSS
+
 * JQuery
+
 * JS
+
 * Bootstrap
 
 ## Support and contact details
+
 _Email no one with any questions, comments, or concerns._
 
 ### License
+
 *{This software is licensed under the MIT license}*
+
 Copyright (c) 2020 **_{Salim Mayan}_**

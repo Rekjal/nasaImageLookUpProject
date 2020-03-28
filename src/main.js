@@ -49,7 +49,7 @@ $(document).ready(function () {
       clickedCheckBoxes.push($(this).val());
     });
     $("input[type=checkbox]").each(function () { this.checked = false; }); //to uncheck previously checked checkboxes
-    
+
     let promise = new Promise(function (resolve, reject) {
       //const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}`;
       const url = `https://images-api.nasa.gov/search?q=apollo%2011...`;
@@ -61,6 +61,7 @@ $(document).ready(function () {
           resolve(request.response);
         } else {
           reject(Error(request.statusText));
+          console.log(`error was ${request.statusText}`);
         }
       };
     });
@@ -85,7 +86,7 @@ $(document).ready(function () {
       console.log(`Objects:ImageObjects::${mediaObjCount}:${imgObjCount}`);
 
       $("#previous").show();
-      $("#next").show();      
+      $("#next").show();
       let index = 0;
 
       printMetaData(index, clickedCheckBoxes, imgObjArray[index]);
