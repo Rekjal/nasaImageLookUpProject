@@ -64,7 +64,7 @@
 
   
 
-- Included a `Refresh` should the user wish to refresh page
+- Included a `Refresh` button should the user wish to refresh page
 
   
 
@@ -78,6 +78,8 @@
 
 - Application will not accept empty Input (If chosen option in drop down is `Select`, then `Submit` button would remain disabled)
 
+- Implemented logic based on `Next` and`Previous` buttons for cyclical navigation through images
+
   
 
 ## Specifications:
@@ -86,7 +88,7 @@
 
     + Input: Select `Without Meta Data` option from drop down and click `Submit`
 
-    + Output: The app would start by displaying the very first image in the box on the right marked `Image Result`. `Next` and `Previous` buttons get rendered via which user can navigate through rest of the images returned by API call
+    + Output: The app shall start by displaying the very first image in the box on the right marked `Image Result`. `Next` and `Previous` buttons get rendered via which user can navigate through rest of the images returned by API call
 
   
 
@@ -98,7 +100,7 @@
 
     + Input: Select `With Meta Data` option from drop down, click on any combination of checkbox (s) (any combination of 4 Meta Data elements - `Title`, `Date Created`, `Description`, and `Image URL`), and click `Submit`
 
-    + Output: The app would start by displaying the very first image in the box on the right marked `Image Result`. `Next` and `Previous` buttons get rendered via which user can navigate through rest of the images returned by API call. Further, Meta Data pertaining to the clicked check box (s) would render in the bottom part of the box on the left marked `View NASA Images`.
+    + Output: The app shall start by displaying the very first image in the box on the right marked `Image Result`. `Next` and `Previous` buttons get rendered via which user can navigate through rest of the images returned by API call. Further, Meta Data pertaining to the clicked check box (s) would render in the bottom part of the box on the left marked `View NASA Images`.
 
   
 
@@ -110,7 +112,7 @@
 
     + Input: Select `With Meta Data` option from drop down, click on any combination of checkbox (s), and click `Submit` (To replicate working of `API call Error` swap valid URL with an invalid one by commenting out `line-52` and uncommenting `line-53` in `main.js`)
 
-    + Output: The app would display an error message containing the `request.status` and `request.statusText` in the box on the right marked `Image Result` (Verbatim error code in this specific case would be `Error Code: 401 (Unauthorized)`)
+    + Output: The app shall display an error message containing the `request.status` and `request.statusText` in the box on the right marked `Image Result` (Verbatim error code in this specific case would be `Error Code: 401 (Unauthorized)`)
 
   
 
@@ -122,7 +124,7 @@
 
     + Input: Select `With Meta Data` option from drop down, click on any combination of checkbox (s), and click `Submit` (To replicate working of `API query returning no result`, force variable that stores Image Array Count (`imgObjCount`) to a value of `0` - do this by commenting out `line-87` and uncommenting `line-88` in `main.js`)
 
-    + Output: The app would return a notification that states there were no image media image (Verbatim error message: `Error: API call returned 0 Image Media`) in the box on the right marked `Image Result`
+    + Output: The app shall return a notification that states there were no image media (Verbatim error message: `Error: API call returned 0 Image Media`) in the box on the right marked `Image Result`
 
   
   
