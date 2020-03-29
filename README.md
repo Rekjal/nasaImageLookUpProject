@@ -86,7 +86,7 @@
 
     + Input: Select `Without Meta Data` option from drop down and click `Submit`
 
-    + Output: The app would start by displaying the very first image in the box on the right marked `Image Result`. `Next` and `Previous` button get rendered via which user can navigate through rest of the images returned by API call
+    + Output: The app would start by displaying the very first image in the box on the right marked `Image Result`. `Next` and `Previous` buttons get rendered via which user can navigate through rest of the images returned by API call
 
   
 
@@ -98,7 +98,7 @@
 
     + Input: Select `With Meta Data` option from drop down, click on any combination of checkbox (s) (any combination of 4 Meta Data elements - `Title`, `Date Created`, `Description`, and `Image URL`), and click `Submit`
 
-    + Output: The app would start by displaying the very first image in the box on the right marked `Image Result`. `Next` and `Previous` button get rendered via which user can navigate through rest of the images returned by API call. Further, Meta Data pertaining to the clicked check box (s) would render in the bottom part of the box on the left marked `View NASA Images`.
+    + Output: The app would start by displaying the very first image in the box on the right marked `Image Result`. `Next` and `Previous` buttons get rendered via which user can navigate through rest of the images returned by API call. Further, Meta Data pertaining to the clicked check box (s) would render in the bottom part of the box on the left marked `View NASA Images`.
 
   
 
