@@ -20,20 +20,13 @@
 
 - Application correctly parses nested JSON and displays the API call result, which includes `Images`, and `Meta data` pertaining to Images. User can either opt for no `Meta Data` or opt for any combination of following 4 `Meta Data` elements by selecting relevant checkbox (s).
 
--  `Title`
+    + `Title`
 
-  
+    + `Date Created`  
 
--  `Date Created`
+    + `Description`  
 
-  
-
--  `Description`
-
-  
-
--  `Image URL`
-
+    + `Image URL`
   
 
 - API call does not use keys and hence no `.env` file exist
