@@ -103,7 +103,7 @@
 
 * Spec 3: **Error-Handling for API call Error:** The app displays an error message if API call resulted in an error
 
-    + Input: Select `With Meta Data` option from drop down, click on any combination of checkbox (s), and click `Submit` (To replicate working of `API call Error` swap valid URL with an invalid one by commenting out `line-52` and uncommenting `line-53` in `main.js`)
+    + Input: Select `With Meta Data` option from drop down, click on any combination of checkbox (s), and click `Submit` (To replicate working of `API call Error` swap valid URL with an invalid one by commenting out `line-16` and uncommenting `line-17` in `NASAApiCall.js`)
 
     + Output: The app shall display an error message containing the `request.status` and `request.statusText` in the box on the right marked `Image Result` (Verbatim error code in this specific case would be `Error Code: 401 (Unauthorized)`)
 
@@ -115,7 +115,7 @@
 
 * Spec 4: **Error-Handling if API query returned no result:** The app displays a notification if API call returned `0` image media
 
-    + Input: Select `With Meta Data` option from drop down, click on any combination of checkbox (s), and click `Submit` (To replicate working of `API query returning no result`, force variable that stores Image Array Count (`imgObjCount`) to a value of `0` - do this by commenting out `line-87` and uncommenting `line-88` in `main.js`)
+    + Input: Select `With Meta Data` option from drop down, click on any combination of checkbox (s), and click `Submit` (To replicate working of `API query returning no result`, force variable that stores Image Array Count (`imgObjCount`) to a value of `0` - do this by commenting out `line-48` and uncommenting `line-49` in `main.js`)
 
     + Output: The app shall return a notification that states there were no image media (Verbatim error message: `Error: API call returned 0 Image Media`) in the box on the right marked `Image Result`
 
