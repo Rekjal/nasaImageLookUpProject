@@ -78,6 +78,8 @@ $(document).ready(function () {
       }
     })(); //End of Asynch opertation
 
+    
+
     $('#next').on('click', function () {  //Code to handle clicks on "Previous" & "Next" buttons
       if (auxFunctions.getIndex() === auxFunctions.getImageMediaCount() - 1) { //if CURRENT is 7, NEXT is 0;  
         auxFunctions.setIndex(0);
